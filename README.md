@@ -1,18 +1,20 @@
 # Virtual Bank
 
-A C++ program that allows user to experience having a bank account and carry some functions.
+A simple C++ console application that simulates basic banking operations. Users can check their balance, deposit money, withdraw money, and exit the program. The application provides a user-friendly menu and ensures all transactions are validated.
 
 ## Features
 
-- check balance, deposit money and withdraw money from the virtual bank.
-- Simple command-line interface for user interaction
+- View current account balance
+- Deposit money with input validation
+- Withdraw money with balance checks (no overdrafts)
+- User-friendly command-line menu
 - Cross-platform: works on Linux, Windows, and macOS
 
 ## Installation
 
 ### 1. Clone the repository
 ```sh
-git clone https://github.com/XingChen47/Vritual-Bank.git
+git clone https://github.com/XingChen47/Virtual-Bank.git
 cd Virtual-Bank
 ```
 
@@ -20,34 +22,47 @@ cd Virtual-Bank
 
 #### **Linux/macOS**
 ```sh
-g++ -o Virtual_Bank "Bank.cpp"
+g++ -o bank Bank.cpp
 ```
 
 #### **Windows (using MinGW)**
 ```sh
-g++ -o Virtual_Bank.exe "Bank.cpp"
+g++ -o bank.exe Bank.cpp
 ```
-*Make sure `g++` is available in your PATH. If using another compiler, adjust the command accordingly.*
-
+*Ensure `g++` is installed and in your PATH.*
 
 ## Usage
 
-### **Interactive Mode:**  
-Simply run the compiled program and follow the prompt to enter your choice of action.
+Run the compiled program from your terminal:
 
 **Linux/macOS:**
 ```sh
-./Virtual_Bank
+./bank
 ```
 
 **Windows:**
 ```sh
-Virtual_Bank.exe
+bank.exe
 ```
 
+You will see a menu with options to show your balance, deposit money, withdraw money, or exit. Enter the number corresponding to your choice and follow the prompts.
 
-## How it Works
+**Example Output:**
+```
+***** Welcome to Ruby Bank *****
+1. Show balance
+2. Deposit Money
+3. Withdraw Money
+4. Exit
+********************************
+1
+********************************
+Your balance is $0.00
+********************************
+```
 
-1. **Format Validation:** Checks that input for choice is only integer and only ranges from 1-4
-2. **Format Validation:** Checks that amount deposited/withdrew is not negative and these actions can only be carried out if the account has enough balance
+Transactions are validated to prevent negative deposits or overdrafts. The program will display informative messages for invalid operations.
 
+## Customization
+
+You can easily add more features (such as transaction history or user authentication) by expanding the source code.
